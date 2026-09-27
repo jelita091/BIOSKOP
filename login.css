@@ -1,0 +1,456 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #080914;
+
+    color: white;
+}
+
+
+/* ==============================
+   CONTAINER
+============================== */
+
+.login-container {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+}
+
+
+/* ==============================
+   GAMBAR
+============================== */
+
+.login-image {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 6, 15, 0.75),
+            rgba(5, 6, 15, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba")
+        center/cover;
+
+    position: relative;
+}
+
+
+.overlay {
+
+    position: absolute;
+
+    left: 10%;
+    bottom: 12%;
+
+    max-width: 550px;
+}
+
+
+.logo {
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 40px;
+}
+
+.logo span,
+.mobile-logo span {
+
+    color: #e50914;
+}
+
+
+.overlay h1 {
+
+    font-size: 55px;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+
+.overlay p {
+
+    color: #ddd;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+}
+
+
+/* ==============================
+   FORM
+============================== */
+
+.login-form {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    background: #0b0d18;
+}
+
+
+.form-content {
+
+    width: 100%;
+
+    max-width: 430px;
+}
+
+
+.mobile-logo {
+
+    display: none;
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    margin-bottom: 35px;
+}
+
+
+.form-content h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.description {
+
+    color: #999;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==============================
+   INPUT
+============================== */
+
+.input-group {
+
+    margin-bottom: 22px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    background: #151827;
+
+    border: 1px solid #2d3043;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.input-group input:focus {
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 10px rgba(229, 9, 20, 0.15);
+}
+
+
+/* ==============================
+   PASSWORD
+============================== */
+
+.password-box {
+
+    position: relative;
+}
+
+
+.password-box input {
+
+    padding-right: 50px;
+}
+
+
+.password-box button {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    padding: 10px;
+}
+
+
+/* ==============================
+   OPTIONS
+============================== */
+
+.login-options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    color: #aaa;
+}
+
+
+.login-options label {
+
+    display: flex;
+
+    gap: 7px;
+
+    align-items: center;
+}
+
+
+.login-options a {
+
+    color: #e50914;
+
+    text-decoration: none;
+}
+
+
+/* ==============================
+   LOGIN BUTTON
+============================== */
+
+.login-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    background: #e50914;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.login-button:hover {
+
+    background: #ff2633;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(229, 9, 20, 0.25);
+}
+
+
+/* ==============================
+   DIVIDER
+============================== */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+
+    color: #555;
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    background: #292c3c;
+
+    flex: 1;
+}
+
+
+/* ==============================
+   GUEST
+============================== */
+
+.guest-button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #34384d;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.guest-button:hover {
+
+    background: #171a29;
+
+    border-color: #e50914;
+}
+
+
+/* ==============================
+   REGISTER
+============================== */
+
+.register-text {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+.register-text a {
+
+    color: #e50914;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+
+    .login-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    .login-image {
+
+        display: none;
+    }
+
+    .mobile-logo {
+
+        display: block;
+    }
+
+    .login-form {
+
+        min-height: 100vh;
+
+        padding: 30px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .login-form {
+
+        padding: 25px 20px;
+    }
+
+    .form-content h2 {
+
+        font-size: 29px;
+    }
+
+}
+```

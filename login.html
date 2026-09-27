@@ -1,0 +1,274 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - CineBook</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- BAGIAN GAMBAR -->
+        <div class="login-image">
+
+            <div class="overlay">
+
+                <div class="logo">
+                    🎬 Cine<span>Book</span>
+                </div>
+
+                <h1>
+                    Your Movie.<br>
+                    Your Experience.
+                </h1>
+
+                <p>
+                    Pesan tiket bioskop dengan mudah,
+                    cepat, dan nyaman bersama CineBook.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM LOGIN -->
+        <div class="login-form">
+
+            <div class="form-content">
+
+                <div class="mobile-logo">
+                    🎬 Cine<span>Book</span>
+                </div>
+
+                <h2>Selamat Datang!</h2>
+
+                <p class="description">
+                    Silakan login untuk melanjutkan
+                    ke dashboard CineBook.
+                </p>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Masukkan username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-box">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Masukkan password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                onclick="togglePassword()"
+                                id="showPassword"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            Ingat saya
+                        </label>
+
+                        <a href="#">
+                            Lupa password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+
+                <div class="divider">
+                    <span>atau</span>
+                </div>
+
+
+                <button
+                    class="guest-button"
+                    onclick="loginGuest()"
+                >
+                    👤 Masuk sebagai Tamu
+                </button>
+
+
+                <p class="register-text">
+                    Belum punya akun?
+                    <a href="#">Daftar sekarang</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // ==============================
+        // LOGIN
+        // ==============================
+
+        document
+            .getElementById("loginForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const username =
+                    document.getElementById("username").value;
+
+                const password =
+                    document.getElementById("password").value;
+
+
+                /*
+                LOGIN DEMO
+
+                Username : admin
+                Password : 12345
+                */
+
+                if (
+                    username === "admin" &&
+                    password === "12345"
+                ) {
+
+                    localStorage.setItem(
+                        "cinebookLogin",
+                        "true"
+                    );
+
+                    localStorage.setItem(
+                        "cinebookUser",
+                        username
+                    );
+
+                    window.location.href =
+                        "index.html";
+
+                }
+
+                else {
+
+                    alert(
+                        "❌ Username atau password salah!\n\n" +
+                        "Demo Login:\n" +
+                        "Username: admin\n" +
+                        "Password: 12345"
+                    );
+
+                }
+
+            });
+
+
+        // ==============================
+        // PASSWORD
+        // ==============================
+
+        function togglePassword() {
+
+            const password =
+                document.getElementById("password");
+
+            const button =
+                document.getElementById("showPassword");
+
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                button.innerText = "🙈";
+
+            }
+
+            else {
+
+                password.type = "password";
+
+                button.innerText = "👁";
+
+            }
+
+        }
+
+
+        // ==============================
+        // LOGIN TAMU
+        // ==============================
+
+        function loginGuest() {
+
+            localStorage.setItem(
+                "cinebookLogin",
+                "true"
+            );
+
+            localStorage.setItem(
+                "cinebookUser",
+                "Guest"
+            );
+
+            window.location.href =
+                "index.html";
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
